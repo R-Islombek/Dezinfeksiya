@@ -2,7 +2,7 @@ import HeroImg from "./images/hero.png";
 import back from "./images/back.png";
 import aquas from "./images/aqua.png";
 import laqua from "./images/laqua.png";
-import Person from "./images/Person.png";
+import Person from "./images/person.png";
 
 const Hero = () => {
   return (
