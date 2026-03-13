@@ -27,8 +27,9 @@ const Header = () => {
 
   return (
     <>
+      {/* Header - o'rtacha z-index */}
       <header
-        className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
           scrolled
             ? "bg-white/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
             : "bg-white shadow-[0_5px_20px_rgba(0,0,0,0.04)]"
@@ -64,7 +65,7 @@ const Header = () => {
           </a>
           
           <button
-            className="lg:hidden text-3xl p-2"
+            className="lg:hidden text-3xl p-2 relative z-[101]"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "✕" : "☰"}
@@ -72,15 +73,17 @@ const Header = () => {
         </div>
       </header>
 
+      {/* Overlay - menu ochilganda chiqadi */}
       <div
         onClick={() => setMenuOpen(false)}
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-all duration-300 ${
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm transition-all duration-300 z-[150] ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       />
 
+      {/* Mobil menu - eng yuqori z-index */}
       <div
-        className={`fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.25)] transform transition-transform duration-300 ${
+        className={`fixed z-[200] top-0 right-0 h-full w-[280px] sm:w-[320px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.25)] transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -116,6 +119,7 @@ const Header = () => {
         </ul>
       </div>
 
+      {/* Bo'sh joy - header balandligi */}
       <div className="h-[80px]"></div>
     </>
   );
